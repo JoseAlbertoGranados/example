@@ -1,147 +1,150 @@
-
-*, *::before, *::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-body{
-	font-family: 'Times New Roman', Times, serif;
-    min-height: 100vh;
-    box-sizing: border-box;
-    background-color: white;
+body {background:#FEFEFE;}
+
+.menu_bar {
+	display:none;
 }
 
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: red;
-    padding: 0px 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    z-index: 1000;
+header {
+	width: 100%;
 }
 
-.logo{
-    font-size: 25px;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: 700;
+header nav {
+	background:#023859;
+	z-index:1000;
+	max-width: 1000px;
+	width:95%;
+	margin:20px auto;
 }
 
-.navigation ul{
-    list-style: none;
+header nav ul {
+	list-style:none;
 }
 
-
-.header .navigation ul li{
-    float: left;
-    position: relative;
+header nav ul li {
+	display:inline-block;
+	position: relative;
 }
 
-.header .navigation ul li a{
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    padding: 20px;
-    display: block;
-    transition: all .2s ease;
-
+header nav ul li:hover {
+	background:#E6344A;
 }
 
-.header .navigation ul li a:hover{
-    background-color: rgb(241, 211, 211);
+header nav ul li a {
+	color:#fff;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
 }
 
-.header .navigation ul li ul{
-    position: absolute;
-    right: 0;
-    width: 300px;
-    background-color: rgb(190, 221, 76);
-    display: none;
+header nav ul li a span {
+	margin-right:10px;
 }
 
-.header .navigation ul li ul li a{
-    font-size: 15px;
-    text-transform: capitalize;
+header nav ul li:hover .children {
+	display:block;
 }
 
-.header .navigation ul li ul li ul{
-    position: absolute;
-    top: 0;
-    right: 300px;
+header nav ul li .children {
+	display: none;
+	background:#011826;
+	position: absolute;
+	width: 150%;
+	z-index:1000;
 }
 
-.header .navigation ul li ul li{
-    width: 100%;
+header nav ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
 }
 
-.header .navigation ul li:hover > ul{
-    display: initial;
+header nav ul li .children li a {
+	display: block;
 }
 
-#toggle, .header label{
-    display: none;
-    cursor: pointer;
+header nav ul li .children li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
 }
 
-.menu{
-    width: 45px;
-    height: 35px;
+header nav ul li .caret {
+	position: relative;
+	top:3px;
+	margin-left:10px;
+	margin-right:0px;
 }
 
-@media(max-width:750px){
-    .header label{
-        display: initial;
-    }
+@media screen and (max-width: 800px) {
+	body {
+		padding-top:80px;
+	}
 
-    .header{
-        padding: 20px 10%;
-    }
+	.menu_bar {
+		display:block;
+		width:100%;
+		position: fixed;
+		top:0;
+		background:#E6344A;
+	}
 
-    .header .navigation{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: rgba(1, 1, 1, 0.7);
-        display: none;
- 
-    }
+	.menu_bar .bt-menu {
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+		text-decoration: none;
+	}
 
-    .header .navigation ul li{
-        width: 100%;
-    }
+	.menu_bar span {
+		float: right;
+		font-size: 40px;
+	}
 
-    .header .navigation ul li a{
-        padding: 8px 30px 8px 10%;
-    }
+	header nav {
+		width: 80%;
+		height: calc(100% - 80px);
+		position: fixed;
+		right:100%;
+		margin: 0;
+		overflow: scroll;
+	}
 
-    .header .navigation ul li ul{
-        position: relative;
-        width: 100%;
-        left: 0;
-    }
+	header nav ul li {
+		display: block;
+		border-bottom:1px solid rgba(255,255,255,.5);
+	}
 
-    .header .navigation ul li ul li{
-        background-color: rgba(1, 1, 1, 0.7);
+	header nav ul li a {
+		display: block;
+	}
 
+	header nav ul li:hover .children {
+		display: none;
+	}
 
+	header nav ul li .children {
+		width: 100%;
+		position: relative;
+	}
 
-    }
+	header nav ul li .children li a {
+		margin-left:20px;
+	}
 
-    .header .navigation ul li ul li ul{
-        position: relative;
-        width: 100%;
-        left: 0;
-
-    }
-
-    #toggle:checked ~ .navigation{
-        display: block;
-    }
-
+	header nav ul li .caret {
+		float: right;
+	}
 }
