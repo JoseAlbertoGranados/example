@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard Responsive</title>
+	<link rel="SHORTCUT ICON" href="itcg.jpg" type="image/x-icon">
+	<script src="https://kit.fontawesome.com/9584a3d4cd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+	<input type="checkbox" id="checkbox">
+
+	<header class="cabecera">
+		<h2>ITCG - <b> Departamento Actividades Extraescolares </b> <label for="checkbox">
+			<i id="btn" class="fa-solid fa-bars"></i>
+		</label> </h2>
+		
+
+		<label>
+			<i id="navbtn" class="fa-solid fa-bars"></i>
+		</label>
+	</header>
+	<div id="body" class="body">
+		<nav id="menu"d class="menu active">
+			<div class="user-p">
+				<img src="itcg.jpg">
+				<h3>Mi nombre</h3>
+			</div>
+			<ul>
+				<li>
+					<a href="">
+						<i class="fa-solid fa-desktop"></i>
+						<span>Inicio</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="fa-solid fa-power-off"></i>
+						<span>Sesión</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<section id="ventana" class="ventana">
+			<h1>Bienvenido</h1>
+		</section>
+	</div>
+
+	<div>
+		<p>
+Pero aquellas condiciones no fueron lo único a lo que Alemania tuvo que enfrentarse tras la firma del Tratado de Versalles. Se incluyeron asimismo una serie de cláusulas militares que obligaban a reducir drásticamente el Ejército alemán y se puso fin al servicio militar obligatorio. También se suprimió la aviación, la artillería pesada y los submarinos.
+
+Además se pusieron ciertas condiciones económicas a Alemania como perdedores de la Primera Guerra Mundial. El tratado no establecía una cantidad a pagar, sino que se dejaba para una comisión que la fijaría en 1921, pero sí se haría antes un pago de 20.000 millones de marcos oro, que por otra parte incluía los alimentos que los Aliados tendrían que suministrar a una Alemania famélica y el coste de la ocupación de Renania por los aliados, todo lo cual sumaba unos 8.000 millones. Gran parte de este pago se hizo en especia. Los vapores y barcos de pesca que entregaron los alemanes en los dos años siguientes como parte del pago sumarían más de 2,6 millones de toneladas, pero los británicos había perdido más de 8 en la guerra.
+		</p>
+	</div>
+
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.body .menu .user-p{
+		padding-top: 20px;
+		padding-left: 20px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.body .menu .user-p h3{
+		font-size: 18px;
+		color: white;
+	}
+
+	.body .menu .user-p img{
+		width: 100px;
+		border-radius: 25%;
+		margin-bottom: 10px;
+	}
+
+	.ventana{
+		background: url('https://www.xtrafondos.com/wallpapers/montanas-en-el-bosque-11688.jpg');
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		background-size: cover;
+		background-position: center;
+		
+
+	}
+
+	#checkbox{
+		display: none;
+	}
+
+	#btn{
+		display: none;
+	}
+
+
+
+	.cabecera{
+		display: flex;
+		position: fixed;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		background: black;
+		padding: 15px 30px;
+
+	}
+
+	.menu{
+		width: 200px;
+		min-height: 100vh;
+		transition: 500ms background;
+		background: #121017;
+		position: absolute;
+		box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+		visibility: hidden;
+
+	}
+
+	.body .menu ul{
+		list-style: none;
+
+	}
+
+	.body .menu ul li{
+		padding: 15px 0;
+		font-size: 16px;
+		transition: 500ms background;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.body .menu ul li a{
+		text-decoration: none;
+		color: #fff;
+		padding-left: 25px;
+		cursor: pointer;
+	}
+
+	.body .menu ul li a i{
+		margin-right: 10px;
+	}
+
+	.body .menu ul li a span{
+		letter-spacing: 1px;
+		
+	}
+
+	.body .menu ul li:hover{
+		background: #5BA2EA;
+	}
+
+	h1{
+		color: white;
+		font-size: 60px;
+	}
+
+	#navbtn{
+		cursor: pointer;
+		font-size: 23px;
+	}
+
+	.active{
+		transform: translate(-400px);
+
+	}
+
+	.mostrar{
+		visibility: visible;
+	}
+
+	
+
+
+	@media (min-width: 1024px) {
+		#navbtn{
+			display: none;
+		}
+
+		.body{
+			display: flex;
+		}
+
+		.cabecera{
+			position: relative;
+		}
+
+		.active{
+			transform: translate(0);
+		}
+
+		.menu{
+			position: relative;
+			box-shadow: none;
+			visibility: visible;
+		}
+
+		#btn{
+		display: inline-block;
+		color: white;
+		font-size: 23px;
+		cursor: pointer;
+		margin-left: 20px;
+	}
+
+	#btn:hover{
+		color: #3B68EA;
+	}
+
+	#checkbox:checked ~ .body .menu{
+		width: 65px;
+	}
+
+	#checkbox:checked ~ .body .menu ul li a span{
+		display: none;
+	}
+
+	#checkbox:checked ~ .body .user-p{
+		visibility: hidden;
+	}
+
+
+	}
+
+</style>
+
+<script type="text/javascript">
+	
+	const icono = document.querySelector("#navbtn");
+	menu = document.querySelector("#menu");
+	
+
+	icono.addEventListener("click", (e) => {
+
+		menu.classList.toggle("active");
+		menu.classList.toggle("mostrar");
+		
+	});
+
+</script>
+
+
+
+
+
+</body>
+</html>
